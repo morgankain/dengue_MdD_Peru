@@ -1,0 +1,37 @@
+model {
+    
+   for (i in 1:N) {
+ 
+ y[i]           ~ dpois(lambda[i] * bias[i])
+ bias[i]        ~ dgamma(theta[i] + 0.05, theta[i] + 0.05)
+   
+ log(lambda[i]) <- mu[i]
+   
+ mu[i]          <- inprod(beta[], x_den[i, ]) + inprod(beta_mos[], x_mos[i, ])
+
+ theta[i]       <- exp(log_theta[i])
+ log_theta[i]   <- inprod(beta_obs[], x_obs[i, ])  
+
+  }
+
+
+## priors. 
+
+for (i in 1:(K_den + 1)) {
+   beta[i]     ~ dnorm(0, 1/10) 
+}
+
+for (i in 1:K_mos) {
+   beta_mos[i] ~ dnorm(0, 1/10)
+}
+
+for (i in 1:(K_obs +1)) {     
+   beta_obs[i] ~ dnorm(0, 1/10) 
+}
+ 
+# var
+r ~ dunif(0, 20)
+
+
+}
+

@@ -1,0 +1,38 @@
+model {
+    
+   for (i in 1:N) {
+ 
+ true_count[i]  ~ dnegbin(p[i], r)
+ y[i]           ~ dbinom(theta[i], true_count[i])
+   
+ p[i]           <- r / (r + lambda[i]) 
+ log(lambda[i]) <- mu[i]
+   
+ mu[i]          <- inprod(beta[], x_den[i, ]) + inprod(beta_mos[], x_mos[i, ])
+
+ theta[i]       <- ilogit(logit_theta[i])
+ logit_theta[i] <- inprod(beta_obs[], x_obs[i, ])  
+
+  }
+
+
+## priors. 
+
+for (i in 1:(K_den + 1)) {
+   beta[i]     ~ dnorm(0, 1/10) 
+}
+
+for (i in 1:K_mos) {
+   beta_mos[i] ~ dnorm(0, 1/10)
+}
+
+for (i in 1:(K_obs + 1)) {     
+   beta_obs[i] ~ dnorm(0, 1/10) 
+}
+ 
+# var
+r ~ dunif(0, 20)
+
+
+}
+
