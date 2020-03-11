@@ -1,0 +1,483 @@
+InputID,TargetID,Distance
+Palma Real,Hospital Madre de Dios,45505.5642814109
+Isla Roling,Hospital Madre de Dios,15798.7534788095
+Tres Islas,Hospital Santa Rosa,20696.8358579966
+Las Palmeras,Hospital Santa Rosa,141692.005450017
+Villa Santiago,Hospital Santa Rosa,133564.645208932
+Santa Rita Baja,Hospital Santa Rosa,114869.303336783
+Sarayacu,Hospital Santa Rosa,95012.3198796191
+Fitzcarrald,Hospital Santa Rosa,19231.5199227305
+Virgen De La Candelar,Hospital Santa Rosa,97352.9524484344
+San Bernardo,Hospital Santa Rosa,25055.3760981378
+Santo Domingo,Hospital Santa Rosa,45072.8852527252
+Florida Alta,Hospital Santa Rosa,50958.9138168705
+Virgenes Del Sol,Hospital Santa Rosa,57438.86412768
+San Juan,Hospital Santa Rosa,63936.0337303637
+Planchon,Hospital Santa Rosa,35458.4226898493
+Fray Martin,Hospital Santa Rosa,63609.4469893079
+Alto Libertad,Hospital Santa Rosa,88758.8869320463
+Union Progreso,Hospital Santa Rosa,76239.5261598907
+Sonene,Hospital Madre de Dios,52479.4794103799
+Monterrey,Hospital Santa Rosa,43643.1903223931
+Alegria,Hospital Santa Rosa,53467.0821732757
+Santa Rosa,Hospital Santa Rosa,126303.100309894
+Mavila,Hospital San Martin de Porres de Iberia,71123.9735125982
+Nueva Vista,Hospital Santa Rosa,66321.6038953443
+Infierno,Hospital Madre de Dios,15366.9979896591
+Baltimore,Hospital Santa Rosa,38190.5571004404
+Laberinto,Hospital Santa Rosa,45363.1378079532
+Puerto Pardo,Hospital Madre de Dios,58041.7131860516
+Lago  Valencia,Hospital Madre de Dios,46610.2993620359
+La Torre,Hospital Madre de Dios,28166.1640017733
+Dos De Mayo,Hospital Santa Rosa,137734.837653489
+Primero De Mayo,Hospital Santa Rosa,39155.4751038493
+El Casta�al,Hospital Santa Rosa,8919.53713271272
+El Gato,Hospital Santa Rosa,40492.5040032682
+Loboyoc,Hospital Santa Rosa,16871.023491718
+Florida Baja,Hospital Santa Rosa,43070.9608356251
+Las Mercedes,Hospital Santa Rosa,30543.7836318395
+Mazuko,Hospital Santa Rosa,139663.57192226
+Nueva Arequipa,Hospital Santa Rosa,93823.8572279386
+Inambari,Hospital Santa Rosa,145419.360144344
+Primavera Alta,Hospital Santa Rosa,109669.90940667
+Primavera Baja,Hospital Santa Rosa,106093.305479128
+Pto. Mazuko,Hospital Santa Rosa,141595.497060733
+Control La Torre,Hospital Madre de Dios,28848.0571992252
+Sachavacayoc,Hospital Madre de Dios,32893.0944144177
+San Francisco,Hospital Santa Rosa,28384.8354895838
+Santa Rita Alta,Hospital Santa Rosa,120855.97530083
+Sol Naciente,Hospital Santa Rosa,83851.4974560239
+Santa Rosa,Hospital Santa Rosa,65047.8036259319
+Sudadero,Hospital Santa Rosa,24281.9947926548
+El triunfo,Hospital Madre de Dios,1948.93794789479
+Tupac Amaru,Hospital Santa Rosa,15145.5789981067
+Villa Rosita,Hospital Santa Rosa,135092.082681983
+Pacahuara,Hospital San Martin de Porres de Iberia,15707.5109863046
+Monte Sinai,Hospital Santa Rosa,20401.1904520497
+Fizcarrald,Hospital Santa Rosa,36476.7300452725
+Agua Negra,Hospital Santa Rosa,26872.3363588382
+Los Cedros,Hospital Santa Rosa,34418.0676186672
+Playa Oculta,Hospital Santa Rosa,137456.465859114
+Centromin,Hospital Santa Rosa,112136.932331019
+Ponal,Hospital Santa Rosa,114057.04481216
+Nuevo San Juan Grande,Hospital Santa Rosa,112763.013977168
+Puerto Arturo,Hospital Santa Rosa,12215.8016747341
+Chorrillos,Hospital Santa Rosa,17248.3419503533
+Tnte. Acevedo,Hospital Santa Rosa,20946.3932459554
+Izuyama,Hospital Madre de Dios,4624.08998055435
+Jorge Chavez,Hospital Madre de Dios,9929.60600342424
+Chonta,Hospital Madre de Dios,10255.2765310338
+Otilia,Hospital Santa Rosa,7651.86850393346
+San Jacinto,Hospital Santa Rosa,22604.0950380153
+Loero,Hospital Madre de Dios,7357.94677502091
+Playa Alta,Hospital Santa Rosa,20716.877882833
+Cachuela,Hospital Santa Rosa,7693.95264735137
+El Prado,Hospital Santa Rosa,6227.34739522798
+El Pilar,Hospital Santa Rosa,7093.94626860436
+Alto Chorrillos,Hospital Santa Rosa,11285.8721270641
+Tres Estrellas,Hospital Santa Rosa,16126.2904258364
+Alto Cachuela,Hospital Santa Rosa,11915.846098912
+Cachuela Baja,Hospital Santa Rosa,5112.25867497579
+Bello Horinzonte,Hospital Santa Rosa,10659.0352373241
+Santa Teresa,Hospital Santa Rosa,8475.48477705702
+Pi�al,Hospital Santa Rosa,62732.3977911675
+Nueva San Juan,Hospital Santa Rosa,68795.5682001775
+Cafetal,Hospital Santa Rosa,69485.4142750424
+Loreto,Hospital San Martin de Porres de Iberia,63737.70967666
+Varsovia,Hospital Santa Rosa,53187.6863870365
+Virgen Del Carmen,Hospital Santa Rosa,56691.2693648669
+Triunfo,Hospital Santa Rosa,61338.0303196909
+Aposento,Hospital Santa Rosa,76120.562435318
+Nueva Alianza,Hospital Santa Rosa,21044.7438297184
+I�apari,Hospital San Martin de Porres de Iberia,51682.5745333149
+B�lgica,Hospital San Martin de Porres de Iberia,54508.971480723
+Nueva Esperanza,Hospital San Martin de Porres de Iberia,44483.4854449607
+Villa Primavera,Hospital San Martin de Porres de Iberia,41036.8560602705
+Noaya,Hospital San Martin de Porres de Iberia,31866.9915756054
+San Isidro De Chilina,Hospital San Martin de Porres de Iberia,21679.7572296829
+Chilina,Hospital San Martin de Porres de Iberia,12310.2521960168
+Flor De Acre,Hospital San Martin de Porres de Iberia,9479.43932317952
+La Republica,Hospital San Martin de Porres de Iberia,9958.9302600811
+Arrozal,Hospital San Martin de Porres de Iberia,11765.3374221533
+Tropezon,Hospital San Martin de Porres de Iberia,6397.32332388149
+Ocean�a,Hospital San Martin de Porres de Iberia,5720.92072874402
+Miraflores,Hospital San Martin de Porres de Iberia,7316.53639723846
+Abeja,Hospital San Martin de Porres de Iberia,10524.0737505564
+San Lorenzo,Hospital San Martin de Porres de Iberia,19163.2916360474
+Alerta,Hospital San Martin de Porres de Iberia,39392.2785193999
+San Pedro,Hospital San Martin de Porres de Iberia,49210.3738835837
+La Merced,Hospital San Martin de Porres de Iberia,12638.5945822513
+Bello Horizonte,Hospital San Martin de Porres de Iberia,6198.2136466056
+Iberia,Hospital San Martin de Porres de Iberia,342.403630934245
+Villa Rocio,Hospital San Martin de Porres de Iberia,53288.525855707
+La Novia,Hospital San Martin de Porres de Iberia,63951.6421412731
+San Lorenzo,Hospital San Martin de Porres de Iberia,19163.2916360474
+Nuevo Pacaram,Hospital San Martin de Porres de Iberia,62991.1289338237
+Santa Mar�a,Hospital San Martin de Porres de Iberia,75550.6048799019
+Shiringayoc,Hospital San Martin de Porres de Iberia,70645.9770851931
+Cinco Planchon,Hospital San Martin de Porres de Iberia,64896.4988269202
+Boca Isiriwe,Hospital Santa Rosa,150942.505948999
+Kotsimba,Hospital Santa Rosa,131747.538524354
+Boca Union,Hospital Santa Rosa,55799.7800490791
+Nuevo Eden,Hospital Santa Rosa,214728.831865459
+Yomibato,Hospital San Martin de Porres de Iberia,263490.665418848
+Colpac,Hospital San Martin de Porres de Iberia,61346.3985092939
+Miraflores,Hospital San Martin de Porres de Iberia,58354.84293132
+Shipetiari,Hospital Santa Rosa,216261.371171174
+Boca Amigo,Hospital Santa Rosa,96701.2088824215
+Guanamayo,Hospital Santa Rosa,118636.635864313
+Bonanza,Hospital Santa Rosa,217219.225381565
+Sabaluyoc,Hospital Santa Rosa,45610.7453395072
+Colpayoc,Hospital Santa Rosa,31472.8361770738
+Boca Pariamanu,Hospital Santa Rosa,21694.6605371216
+San Jose,Hospital Santa Rosa,16330.697782142
+Rompe Olas,Hospital Santa Rosa,3062.95885133225
+Centro Pastora,Hospital Santa Rosa,9670.4205478451
+Jayave,Hospital Santa Rosa,126654.386924755
+Shintuya,Hospital Santa Rosa,229342.435107187
+San Juan Grande,Hospital Santa Rosa,111484.026991495
+Lagarto,Hospital Santa Rosa,70155.239256567
+La Fortuna,Hospital Santa Rosa,50100.6989425145
+Tahuantinsuyo,Hospital Santa Rosa,40324.6805324322
+Tayacome,Hospital San Martin de Porres de Iberia,238045.136588774
+Pantiacolla,Hospital Santa Rosa,236193.74259103
+Itahuania,Hospital Santa Rosa,221282.655374955
+Santa Cruz,Hospital Santa Rosa,234401.2901335
+Llactapampa,Hospital Santa Rosa,236730.728338152
+Mansilla I,Hospital Santa Rosa,235653.755293916
+Los Aguanos,Hospital Santa Rosa,238614.268879787
+Salvaci�n,Hospital Santa Rosa,237495.476514514
+Gamitana,Hospital Santa Rosa,236781.719526674
+Boca Manu,Hospital San Martin de Porres de Iberia,181753.940264614
+Diamante,Hospital San Martin de Porres de Iberia,189836.573597011
+Palmichal,Hospital Santa Rosa,25751.6319738456
+Madama,Hospital Madre de Dios,11152.0283314874
+Puerto Union,Hospital Santa Rosa,14207.5407050491
+Bajo Madre De Dios,Hospital Madre de Dios,5489.42428024143
+Cascajal,Hospital Madre de Dios,11387.1162984925
+Puerto Mamajapa,Hospital Santa Rosa,220730.683196883
+Bajo Piedras,Hospital Santa Rosa,11298.1331631276
+Guacamayo Pacal,Hospital Santa Rosa,121582.278940141
+Monte Salvado,Hospital San Martin de Porres de Iberia,90106.0597067114
+Palotoa Teparo,Hospital Santa Rosa,235945.533721563
+Nueva Mansilla,Hospital Santa Rosa,236065.770949584
+Vuelta Grande,Hospital Santa Rosa,67086.6111354903
+LOROMAYO,Hospital Santa Rosa,144777.263980642
+Bamberme,Hospital Santa Rosa,166335.172135106
+Caychihue,Hospital Santa Rosa,143190.307733751
+Choque,Hospital Santa Rosa,158241.090652744
+Huepetuhe,Hospital Santa Rosa,152375.556350067
+Kimiri,Hospital Santa Rosa,145066.230869457
+Nueva,Hospital Santa Rosa,150081.001736158
+Puente Inambari,Hospital Santa Rosa,145431.001504827
+Punkiri,Hospital Santa Rosa,141010.713807702
+Santa Ines,Hospital Santa Rosa,151629.234417883
+Tigrimayoc,Hospital Santa Rosa,149874.912808483
+Tocabe,Hospital Santa Rosa,145864.639456048
+Tranquera,Hospital Santa Rosa,156268.016075691
+Alto Pukiri,Hospital Santa Rosa,150041.446829336
+Barranco Chico,Hospital Santa Rosa,153093.916655741
+Boca Colorado,Hospital Santa Rosa,130918.426427763
+Delta 1,Hospital Santa Rosa,146265.374028248
+Delta 2,Hospital Santa Rosa,148098.677531816
+Delta 3,Hospital Santa Rosa,144190.972510449
+Delta 4,Hospital Santa Rosa,143705.650172589
+Puerto Luz,Hospital Santa Rosa,153801.849473479
+Punkiri chico,Hospital Santa Rosa,131976.451729633
+San Jose de Karene,Hospital Santa Rosa,145137.571559942
+Setapo,Hospital Santa Rosa,163721.918187775
+Puerto Carlos,Hospital Santa Rosa,131086.209528125
+San Francisco de Asis,Hospital San Martin de Porres de Iberia,8388.99281399713
+Portillo,Hospital San Martin de Porres de Iberia,10777.2434292059
+San Antonio,Hospital San Martin de Porres de Iberia,7088.89771098445
+Santa Julia,Hospital Santa Rosa,67441.7904610631
+Bajo Alegria,Hospital Santa Rosa,55819.8327951661
+Lucerna,Hospital Santa Rosa,60926.6492308024
+Florida,Hospital Santa Rosa,41298.3577250501
+Tipishca,Hospital Santa Rosa,39830.1312155448
+Centro Piedras,Hospital Santa Rosa,29932.3384432634
+Alto Loboyoc,Hospital Santa Rosa,15569.4204989917
+Cachuela Oviedo,Hospital Santa Rosa,11136.1991522949
+Cachuela Margen Izqui,Hospital Santa Rosa,9983.66859317037
+Las Piedras,Hospital Madre de Dios,nan
+Las Piedras,Hospital San Martin de Porres de Iberia,nan
+Las Piedras,Hospital Santa Rosa,nan
+Puerto Maldonado,Hospital Santa Rosa,0.000121969570323326
+Alto Loero,Hospital Madre de Dios,4953.09587001549
+Agua Blanca,Hospital Santa Rosa,46562.7492139874
+Centro Cachuela,Hospital Santa Rosa,6957.77669656533
+La Pastora,Hospital Santa Rosa,2915.13238890565
+Condenado,Hospital Santa Rosa,40835.0726283376
+Los Manantiales,Hospital Santa Rosa,36897.6252274157
+Bajo Tambopata,Hospital Madre de Dios,6815.75587606882
+Fundo Concepcion,Hospital Madre de Dios,9344.27724212801
+Lago Sandoval,Hospital Madre de Dios,14934.2101629846
+Alta Pastora,Hospital Santa Rosa,6800.79720236786
+Cinco Islas,Hospital Santa Rosa,84490.8817439544
+Shiringayoc2,Hospital Santa Rosa,76778.485066163
+Tumi,Hospital Santa Rosa,68394.2134852292
+Horacio Zevallos,Hospital Santa Rosa,66769.19853185
+Boca Inambari,Hospital Santa Rosa,60717.8774116226
+Puerto Aguila,Hospital Santa Rosa,53120.78175334
+Copamanu,Hospital Santa Rosa,38382.2600005964
+Pedro Antonio,Hospital Santa Rosa,39392.8945466252
+Victor Raul Haya de la Torre,Hospital Santa Rosa,36285.6642222445
+La Merced,Hospital Santa Rosa,39794.5874569747
+Huacamayo chico,Hospital Santa Rosa,69191.1368547477
+Alto 2 de Mayo,Hospital Santa Rosa,132120.840759776
+Libertad,Hospital Santa Rosa,159550.259405202
+Machiche,Hospital Santa Rosa,145236.267481905
+Tazon Grande,Hospital Santa Rosa,146858.055335579
+Tazon Chico,Hospital Santa Rosa,146881.89617395
+Isrrael,Hospital Santa Rosa,145756.113995818
+Alto Carbon,Hospital Santa Rosa,234190.256604402
+Yunguyo,Hospital Santa Rosa,237048.318934324
+Adanrayo,Hospital Santa Rosa,238104.209448035
+Huasororquito,Hospital Santa Rosa,162308.033640878
+Malvinas,Hospital Santa Rosa,101259.612283687
+Masenahua,Hospital Santa Rosa,143799.766592635
+San Juan Chico,Hospital Santa Rosa,105888.662650368
+Barranca,Hospital Santa Rosa,140693.844680635
+Puquive,Hospital Santa Rosa,155943.928979388
+Puerto azul,Hospital San Martin de Porres de Iberia,176513.721131274
+Isla de los Valles,Hospital San Martin de Porres de Iberia,176207.449639529
+Palma Real,Hospital Madre de Dios,45505.5642814109
+Isla Roling,Hospital Madre de Dios,15798.7534788095
+Tres Islas,Hospital Santa Rosa,20696.8358579966
+Las Palmeras,Hospital Santa Rosa,141692.005450017
+Villa Santiago,Hospital Santa Rosa,133564.645208932
+Santa Rita Baja,Hospital Santa Rosa,114869.303336783
+Sarayacu,Hospital Santa Rosa,95012.3198796191
+Fitzcarrald,Hospital Santa Rosa,19231.5199227305
+Virgen De La Candelar,Hospital Santa Rosa,97352.9524484344
+San Bernardo,Hospital Santa Rosa,25055.3760981378
+Santo Domingo,Hospital Santa Rosa,45072.8852527252
+Florida Alta,Hospital Santa Rosa,50958.9138168705
+Virgenes Del Sol,Hospital Santa Rosa,57438.86412768
+San Juan,Hospital Santa Rosa,63936.0337303637
+Planchon,Hospital Santa Rosa,35458.4226898493
+Fray Martin,Hospital Santa Rosa,63609.4469893079
+Alto Libertad,Hospital Santa Rosa,88758.8869320463
+Union Progreso,Hospital Santa Rosa,76239.5261598907
+Sonene,Hospital Madre de Dios,52479.4794103799
+Monterrey,Hospital Santa Rosa,43643.1903223931
+Alegria,Hospital Santa Rosa,53467.0821732757
+Santa Rosa,Hospital Santa Rosa,126303.100309894
+Mavila,Hospital San Martin de Porres de Iberia,71123.9735125982
+Nueva Vista,Hospital Santa Rosa,66321.6038953443
+Infierno,Hospital Madre de Dios,15366.9979896591
+Baltimore,Hospital Santa Rosa,38190.5571004404
+Laberinto,Hospital Santa Rosa,45363.1378079532
+Puerto Pardo,Hospital Madre de Dios,58041.7131860516
+Lago  Valencia,Hospital Madre de Dios,46610.2993620359
+La Torre,Hospital Madre de Dios,28166.1640017733
+Dos De Mayo,Hospital Santa Rosa,137734.837653489
+Primero De Mayo,Hospital Santa Rosa,39155.4751038493
+El Casta�al,Hospital Santa Rosa,8919.53713271272
+El Gato,Hospital Santa Rosa,40492.5040032682
+Loboyoc,Hospital Santa Rosa,16871.023491718
+Florida Baja,Hospital Santa Rosa,43070.9608356251
+Las Mercedes,Hospital Santa Rosa,30543.7836318395
+Mazuko,Hospital Santa Rosa,139663.57192226
+Nueva Arequipa,Hospital Santa Rosa,93823.8572279386
+Inambari,Hospital Santa Rosa,145419.360144344
+Primavera Alta,Hospital Santa Rosa,109669.90940667
+Primavera Baja,Hospital Santa Rosa,106093.305479128
+Pto. Mazuko,Hospital Santa Rosa,141595.497060733
+Control La Torre,Hospital Madre de Dios,28848.0571992252
+Sachavacayoc,Hospital Madre de Dios,32893.0944144177
+San Francisco,Hospital Santa Rosa,28384.8354895838
+Santa Rita Alta,Hospital Santa Rosa,120855.97530083
+Sol Naciente,Hospital Santa Rosa,83851.4974560239
+Santa Rosa,Hospital Santa Rosa,65047.8036259319
+Sudadero,Hospital Santa Rosa,24281.9947926548
+El triunfo,Hospital Madre de Dios,1948.93794789479
+Tupac Amaru,Hospital Santa Rosa,15145.5789981067
+Villa Rosita,Hospital Santa Rosa,135092.082681983
+Pacahuara,Hospital San Martin de Porres de Iberia,15707.5109863046
+Monte Sinai,Hospital Santa Rosa,20401.1904520497
+Fizcarrald,Hospital Santa Rosa,36476.7300452725
+Agua Negra,Hospital Santa Rosa,26872.3363588382
+Los Cedros,Hospital Santa Rosa,34418.0676186672
+Playa Oculta,Hospital Santa Rosa,137456.465859114
+Centromin,Hospital Santa Rosa,112136.932331019
+Ponal,Hospital Santa Rosa,114057.04481216
+Nuevo San Juan Grande,Hospital Santa Rosa,112763.013977168
+Puerto Arturo,Hospital Santa Rosa,12215.8016747341
+Chorrillos,Hospital Santa Rosa,17248.3419503533
+Tnte. Acevedo,Hospital Santa Rosa,20946.3932459554
+Izuyama,Hospital Madre de Dios,4624.08998055435
+Jorge Chavez,Hospital Madre de Dios,9929.60600342424
+Chonta,Hospital Madre de Dios,10255.2765310338
+Otilia,Hospital Santa Rosa,7651.86850393346
+San Jacinto,Hospital Santa Rosa,22604.0950380153
+Loero,Hospital Madre de Dios,7357.94677502091
+Playa Alta,Hospital Santa Rosa,20716.877882833
+Cachuela,Hospital Santa Rosa,7693.95264735137
+El Prado,Hospital Santa Rosa,6227.34739522798
+El Pilar,Hospital Santa Rosa,7093.94626860436
+Alto Chorrillos,Hospital Santa Rosa,11285.8721270641
+Tres Estrellas,Hospital Santa Rosa,16126.2904258364
+Alto Cachuela,Hospital Santa Rosa,11915.846098912
+Cachuela Baja,Hospital Santa Rosa,5112.25867497579
+Bello Horinzonte,Hospital Santa Rosa,10659.0352373241
+Santa Teresa,Hospital Santa Rosa,8475.48477705702
+Pi�al,Hospital Santa Rosa,62732.3977911675
+Nueva San Juan,Hospital Santa Rosa,68795.5682001775
+Cafetal,Hospital Santa Rosa,69485.4142750424
+Loreto,Hospital San Martin de Porres de Iberia,63737.70967666
+Varsovia,Hospital Santa Rosa,53187.6863870365
+Virgen Del Carmen,Hospital Santa Rosa,56691.2693648669
+Triunfo,Hospital Santa Rosa,61338.0303196909
+Aposento,Hospital Santa Rosa,76120.562435318
+Nueva Alianza,Hospital Santa Rosa,21044.7438297184
+I�apari,Hospital San Martin de Porres de Iberia,51682.5745333149
+B�lgica,Hospital San Martin de Porres de Iberia,54508.971480723
+Nueva Esperanza,Hospital San Martin de Porres de Iberia,44483.4854449607
+Villa Primavera,Hospital San Martin de Porres de Iberia,41036.8560602705
+Noaya,Hospital San Martin de Porres de Iberia,31866.9915756054
+San Isidro De Chilina,Hospital San Martin de Porres de Iberia,21679.7572296829
+Chilina,Hospital San Martin de Porres de Iberia,12310.2521960168
+Flor De Acre,Hospital San Martin de Porres de Iberia,9479.43932317952
+La Republica,Hospital San Martin de Porres de Iberia,9958.9302600811
+Arrozal,Hospital San Martin de Porres de Iberia,11765.3374221533
+Tropezon,Hospital San Martin de Porres de Iberia,6397.32332388149
+Ocean�a,Hospital San Martin de Porres de Iberia,5720.92072874402
+Miraflores,Hospital San Martin de Porres de Iberia,7316.53639723846
+Abeja,Hospital San Martin de Porres de Iberia,10524.0737505564
+Alerta,Hospital San Martin de Porres de Iberia,39392.2785193999
+San Pedro,Hospital San Martin de Porres de Iberia,49210.3738835837
+La Merced,Hospital San Martin de Porres de Iberia,12638.5945822513
+Bello Horizonte,Hospital San Martin de Porres de Iberia,6198.2136466056
+Iberia,Hospital San Martin de Porres de Iberia,342.403630934245
+Villa Rocio,Hospital San Martin de Porres de Iberia,53288.525855707
+La Novia,Hospital San Martin de Porres de Iberia,63951.6421412731
+Nuevo Pacaram,Hospital San Martin de Porres de Iberia,62991.1289338237
+Santa Mar�a,Hospital San Martin de Porres de Iberia,75550.6048799019
+Shiringayoc,Hospital San Martin de Porres de Iberia,70645.9770851931
+Cinco Planchon,Hospital San Martin de Porres de Iberia,64896.4988269202
+Boca Isiriwe,Hospital Santa Rosa,150942.505948999
+Kotsimba,Hospital Santa Rosa,131747.538524354
+Boca Union,Hospital Santa Rosa,55799.7800490791
+Nuevo Eden,Hospital Santa Rosa,214728.831865459
+Yomibato,Hospital San Martin de Porres de Iberia,263490.665418848
+Colpac,Hospital San Martin de Porres de Iberia,61346.3985092939
+Miraflores,Hospital San Martin de Porres de Iberia,58354.84293132
+Shipetiari,Hospital Santa Rosa,216261.371171174
+Boca Amigo,Hospital Santa Rosa,96701.2088824215
+Guanamayo,Hospital Santa Rosa,118636.635864313
+Bonanza,Hospital Santa Rosa,217219.225381565
+Sabaluyoc,Hospital Santa Rosa,45610.7453395072
+Colpayoc,Hospital Santa Rosa,31472.8361770738
+Boca Pariamanu,Hospital Santa Rosa,21694.6605371216
+San Jose,Hospital Santa Rosa,16330.697782142
+Rompe Olas,Hospital Santa Rosa,3062.95885133225
+Centro Pastora,Hospital Santa Rosa,9670.4205478451
+Jayave,Hospital Santa Rosa,126654.386924755
+Shintuya,Hospital Santa Rosa,229342.435107187
+San Juan Grande,Hospital Santa Rosa,111484.026991495
+Lagarto,Hospital Santa Rosa,70155.239256567
+La Fortuna,Hospital Santa Rosa,50100.6989425145
+Tahuantinsuyo,Hospital Santa Rosa,40324.6805324322
+Tayacome,Hospital San Martin de Porres de Iberia,238045.136588774
+Pantiacolla,Hospital Santa Rosa,236193.74259103
+Itahuania,Hospital Santa Rosa,221282.655374955
+Santa Cruz,Hospital Santa Rosa,234401.2901335
+Llactapampa,Hospital Santa Rosa,236730.728338152
+Mansilla I,Hospital Santa Rosa,235653.755293916
+Los Aguanos,Hospital Santa Rosa,238614.268879787
+Salvaci�n,Hospital Santa Rosa,237495.476514514
+Gamitana,Hospital Santa Rosa,236781.719526674
+Boca Manu,Hospital San Martin de Porres de Iberia,181753.940264614
+Diamante,Hospital San Martin de Porres de Iberia,189836.573597011
+Palmichal,Hospital Santa Rosa,25751.6319738456
+Madama,Hospital Madre de Dios,11152.0283314874
+Puerto Union,Hospital Santa Rosa,14207.5407050491
+Bajo Madre De Dios,Hospital Madre de Dios,5489.42428024143
+Cascajal,Hospital Madre de Dios,11387.1162984925
+Puerto Mamajapa,Hospital Santa Rosa,220730.683196883
+Bajo Piedras,Hospital Santa Rosa,11298.1331631276
+Guacamayo Pacal,Hospital Santa Rosa,121582.278940141
+Monte Salvado,Hospital San Martin de Porres de Iberia,90106.0597067114
+Palotoa Teparo,Hospital Santa Rosa,235945.533721563
+Nueva Mansilla,Hospital Santa Rosa,236065.770949584
+Vuelta Grande,Hospital Santa Rosa,67086.6111354903
+LOROMAYO,Hospital Santa Rosa,144777.263980642
+Bamberme,Hospital Santa Rosa,166335.172135106
+Caychihue,Hospital Santa Rosa,143190.307733751
+Choque,Hospital Santa Rosa,158241.090652744
+Huepetuhe,Hospital Santa Rosa,152375.556350067
+Kimiri,Hospital Santa Rosa,145066.230869457
+Nueva,Hospital Santa Rosa,150081.001736158
+Puente Inambari,Hospital Santa Rosa,145431.001504827
+Punkiri,Hospital Santa Rosa,141010.713807702
+Santa Ines,Hospital Santa Rosa,151629.234417883
+Tigrimayoc,Hospital Santa Rosa,149874.912808483
+Tocabe,Hospital Santa Rosa,145864.639456048
+Tranquera,Hospital Santa Rosa,156268.016075691
+Alto Pukiri,Hospital Santa Rosa,150041.446829336
+Barranco Chico,Hospital Santa Rosa,153093.916655741
+Boca Colorado,Hospital Santa Rosa,130918.426427763
+Delta 1,Hospital Santa Rosa,146265.374028248
+Delta 2,Hospital Santa Rosa,148098.677531816
+Delta 3,Hospital Santa Rosa,144190.972510449
+Delta 4,Hospital Santa Rosa,143705.650172589
+Puerto Luz,Hospital Santa Rosa,153801.849473479
+Punkiri chico,Hospital Santa Rosa,131976.451729633
+San Jose de Karene,Hospital Santa Rosa,145137.571559942
+Setapo,Hospital Santa Rosa,163721.918187775
+Puerto Carlos,Hospital Santa Rosa,131086.209528125
+San Francisco de Asis,Hospital San Martin de Porres de Iberia,8388.99281399713
+Portillo,Hospital San Martin de Porres de Iberia,10777.2434292059
+San Antonio,Hospital San Martin de Porres de Iberia,7088.89771098445
+Santa Julia,Hospital Santa Rosa,67441.7904610631
+Bajo Alegria,Hospital Santa Rosa,55819.8327951661
+Lucerna,Hospital Santa Rosa,60926.6492308024
+Florida,Hospital Santa Rosa,41298.3577250501
+Tipishca,Hospital Santa Rosa,39830.1312155448
+Centro Piedras,Hospital Santa Rosa,29932.3384432634
+Alto Loboyoc,Hospital Santa Rosa,15569.4204989917
+Cachuela Oviedo,Hospital Santa Rosa,11136.1991522949
+Cachuela Margen Izqui,Hospital Santa Rosa,9983.66859317037
+Las Piedras,Hospital Madre de Dios,nan
+Las Piedras,Hospital San Martin de Porres de Iberia,nan
+Las Piedras,Hospital Santa Rosa,nan
+Puerto Maldonado,Hospital Santa Rosa,0.000121969570323326
+Alto Loero,Hospital Madre de Dios,4953.09587001549
+Agua Blanca,Hospital Santa Rosa,46562.7492139874
+Centro Cachuela,Hospital Santa Rosa,6957.77669656533
+La Pastora,Hospital Santa Rosa,2915.13238890565
+Condenado,Hospital Santa Rosa,40835.0726283376
+Los Manantiales,Hospital Santa Rosa,36897.6252274157
+Bajo Tambopata,Hospital Madre de Dios,6815.75587606882
+Fundo Concepcion,Hospital Madre de Dios,9344.27724212801
+Lago Sandoval,Hospital Madre de Dios,14934.2101629846
+Alta Pastora,Hospital Santa Rosa,6800.79720236786
+Cinco Islas,Hospital Santa Rosa,84490.8817439544
+Shiringayoc2,Hospital Santa Rosa,76778.485066163
+Tumi,Hospital Santa Rosa,68394.2134852292
+Horacio Zevallos,Hospital Santa Rosa,66769.19853185
+Boca Inambari,Hospital Santa Rosa,60717.8774116226
+Puerto Aguila,Hospital Santa Rosa,53120.78175334
+Copamanu,Hospital Santa Rosa,38382.2600005964
+Pedro Antonio,Hospital Santa Rosa,39392.8945466252
+Victor Raul Haya de la Torre,Hospital Santa Rosa,36285.6642222445
+La Merced,Hospital Santa Rosa,39794.5874569747
+Huacamayo chico,Hospital Santa Rosa,69191.1368547477
+Alto 2 de Mayo,Hospital Santa Rosa,132120.840759776
+Libertad,Hospital Santa Rosa,159550.259405202
+Machiche,Hospital Santa Rosa,145236.267481905
+Tazon Grande,Hospital Santa Rosa,146858.055335579
+Tazon Chico,Hospital Santa Rosa,146881.89617395
+Isrrael,Hospital Santa Rosa,145756.113995818
+Alto Carbon,Hospital Santa Rosa,234190.256604402
+Yunguyo,Hospital Santa Rosa,237048.318934324
+Adanrayo,Hospital Santa Rosa,238104.209448035
+Huasororquito,Hospital Santa Rosa,162308.033640878
+Malvinas,Hospital Santa Rosa,101259.612283687
+Masenahua,Hospital Santa Rosa,143799.766592635
+San Juan Chico,Hospital Santa Rosa,105888.662650368
+Barranca,Hospital Santa Rosa,140693.844680635
+Puquive,Hospital Santa Rosa,155943.928979388
+Puerto azul,Hospital San Martin de Porres de Iberia,176513.721131274
+Isla de los Valles,Hospital San Martin de Porres de Iberia,176207.449639529

@@ -1,0 +1,6 @@
+library(ggplot2); library(gridExtra); library(dplyr); library(reshape2)
+library(lme4); library(betareg); library(MASS)
+library(rgdal); library(gdalUtils); library(rsq)
+library(ciTools); library(rjags)
+library(rstan); library(shinystan)
+library(raster)
