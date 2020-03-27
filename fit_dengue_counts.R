@@ -49,6 +49,7 @@ reg_points.x      <- as.matrix(reg_points %>% dplyr::select(
 , tempmean
 , tempvar
   ))
+
 reg_points.x[, 3] <- log(reg_points.x[, 3])
 
 ## A little precarious. Relies on perfect matching of order. Should probably have a check to make sure of a match before running 
@@ -62,7 +63,6 @@ reg_points.o      <- t(apply(reg_points.o, 1, FUN = function (z) (z - stan.predi
 ## around Puerto Maldonado. Do this for the maps for each future scenario
 ######
 
-## Not updated because sim_data should be FALSE. Something to come back to potentially
 if (!sim_data) {
   
 ## Idea here would be to have year as a random effect instead of trying to fit time series in any way. Treating year as a random effect
@@ -97,6 +97,10 @@ stan.data.d <- list(
   )
 
 } else {
+  
+###### !!
+## Not updated because sim_data should be FALSE. Something to come back to potentially
+###### !!
   
 stan.data.d <- list(
   N             = nrow(stan.predictors.d)
@@ -139,10 +143,10 @@ nc <- 3
 ## downtown MdD, but for now I cant really hope to do better 
 ###### !!
 
-if (!file.exists("stan_output/stan.fit.d.Rds")) {
+if (!file.exists("../stan_output/stan.fit.d.Rds")) {
 
 stan.fit.d <- stan(
-  file    = "stan_models/dengue_counts_zero_inf_pois_opt2.stan"
+  file    = "../stan_models/dengue_counts_zero_inf_pois_opt2.stan"
 , data    = stan.data.d
 , chains  = nc
 , iter    = ni
@@ -156,15 +160,15 @@ stan.fit.d <- stan(
   ## for option 1 (see export_mosquito_abund and export_dengue_counts for details) could also 
    ## save the predictions of interest to save space, model gets too big otherwise.
     ## This actually turns out to be extremely slow, so instead try predicting after (opt 2)
-#, include = TRUE
-#, pars    = c("theta_pred", "lambda_log_pred")
+# , include = TRUE
+# , pars    = c("theta_pred", "lambda_log_pred")
   )
 
-saveRDS(stan.fit.d, "stan_output/stan.fit.d.Rds")
+saveRDS(stan.fit.d, "../stan_output/stan.fit.d.Rds")
 
 } else {
   
-stan.fit.d <- readRDS("stan_output/stan.fit.d.Rds")
+stan.fit.d <- readRDS("../stan_output/stan.fit.d.Rds")
   
 }
 

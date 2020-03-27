@@ -12,12 +12,6 @@ mosq_samples    <- mosq_samples %>% dplyr::select(NAME, aedes, non_aedes, total,
   , tempmean_mean, tempvar_mean)
 names(mosq_samples)[c(6:7)]   <- c("aedes_pred", "pop")
 
-############# !*! 
-## Informed Chris about this: there are a few values above 100 and below 0, which could indicate
-## a pathology in his model
-############# !*! 
-mosq_samples$aedes_pred[mosq_samples$aedes_pred > 100] <- 99.99
-
 ## rename (residual from older script)
 mosq_buffer     <- mosq_samples
 
@@ -46,4 +40,3 @@ stan.predictors.m.sd   <- apply(stan.predictors.m, 2, FUN = function (z) sd(z))
 ## try and scale each x predictor
 stan.predictors.m <- apply(stan.predictors.m, 2, FUN = function (z) (z - mean(z)) / sd(z))
 stan.response.m   <- mosq_buffer$aedes
-

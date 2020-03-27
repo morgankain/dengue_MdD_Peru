@@ -15,12 +15,11 @@ dengue_cases <- transform(dengue_cases, NOMBRE = as.character(NOMBRE))
 names(pop_buffer)[2]   <- "pop_name"
 names(dengue_cases)[3] <- "dengue_name"
 
-############# !*! 
-## This is potentially dangerous, becuase the closest hospital for some of these places
-## Is outside of MdD, so we don't have data on those places. That is, infections may be recorded 
-## outside of MdD so we see a 0 recorded
-## Hopefully even with this caveat these 0s will be helpful for predicting suitability vs observation
-############# !*!
+#### !*! 
+## This is potentially a dangerous choice: the closest hospital for some of these places
+## is outside of MdD, and  we don't have data from those hospitals. In an infectious individual went
+## outside of MdD for treatment, they will turn up as a 0 in the dengue count dataset 
+#### !*!
 
 dist_mat_to_cases  <- dist_mat_to_cases[-which(duplicated(dist_mat_to_cases)), ]
 dist_mat_to_health <- dist_mat_to_health[-which(duplicated(dist_mat_to_health)), ]
@@ -67,6 +66,7 @@ n_years <- 10
 source("simulate_data.R")
 
 ## grab the columns for the predictors for the mosquito abundance model; which.predictors.m
+ ## requires specifically named columns exported from GIS
 dengue_cases.s.m     <- apply(dengue_cases[
   , c("land_cov1_mean", "land_cov3_mean"
     , "pop_mean", "tempmean_mean", "tempvar_mean")], 2, FUN = function (z) mean(z))

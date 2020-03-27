@@ -9,15 +9,14 @@
 
 ## Setup scripts and parameters
 source("packages.R")
-source("ggplot_theme.R")
-  # link for probability scale to (-inf, inf)
-linkfun    <- make.link("logit")
+source("../ggplot_theme.R")
+linkfun <- make.link("logit")
   # Duplicate data with some noise (a trial that mostly didn't work). Best to keep this false
-sim_data   <- FALSE
+sim_data <- FALSE
   # Fine or coarse predictions? (pulls in different exported csv from QGIS)
 pred_scale <- "coarse"
   # prediction for present or future? (only data for "present" available on github)
-pred_time  <- "pres"
+pred_time <- "pres"
 
 ## Load data, exported as .csv from raster samples made in QGIS
 source("load_data.R")

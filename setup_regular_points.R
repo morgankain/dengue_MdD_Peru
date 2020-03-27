@@ -5,7 +5,7 @@
 #####
 
 ## Make sure the exported .csv samples the rasters in this order! change this line if the samples are in differnet orders
-names(reg_points)        <- c("id", "lat", "lon", "land1", "land2", "land3", "tempmean", "tempvar", "tempskew", "pop", "aedes")
+names(reg_points)        <- c("id", "lat", "lon", "aedes", "land1", "land2", "land3", "tempmean", "tempvar", "tempskew", "pop")
 names(reg_points_dist_h) <- c("id", "out", "dist_to_h")
 names(reg_points_dist_r) <- c("id", "out", "dist_to_r")
 reg_points               <- left_join(reg_points, reg_points_dist_h[, -2], "id")
@@ -32,14 +32,7 @@ for (i in seq_along(check_na)) {
  ## Recall, used log(pop) earlier to get stan.predictors.m.mean[3]
 reg_points.x.d <- (log(reg_points.x[, 3]) - stan.predictors.m.mean[3]) / stan.predictors.m.sd[3]
   
-############# !*! 
-## Informed Chris about this: there are a few values above 100 and below 0, which could indicate
-## a pathology in his model.
-## Across the ~ 100,000 samples there are only about 15, so not a big deal, but still a small error
-############# !*! 
 reg_points.z <- as.matrix(reg_points %>% dplyr::select(aedes))
-reg_points.z[reg_points.z <= 0]  <- 0.01 
-reg_points.z[reg_points.z > 100] <- 99.99
 
 check_na <- which(is.na(reg_points.z[, 1]))
 if (length(check_na) > 0) {

@@ -41,7 +41,7 @@
 
 ## Eeek, not dynamic at all... Hope to move to opt 1 anyway...
  ## To do it this way to get CI on the predictions need all the samples
-export.name <- paste("map_export/", pred_time, "/", "dengue_", pred_scale, "_pres.tif", sep = "")
+export.name <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_fut_sost2.tif", sep = "")
 
 ## If export to the raster has already happened don't do this slow step...
 if (!file.exists(export.name)) {
@@ -74,8 +74,8 @@ stan.fit.d.lambda_est <- data.frame(
   lwr     = numeric(nrow(stan.data.d$x_pred))
 , lwr_nrw = numeric(nrow(stan.data.d$x_pred))
 , est     = numeric(nrow(stan.data.d$x_pred))
-, upr     = numeric(nrow(stan.data.d$x_pred))
 , upr_nrw = numeric(nrow(stan.data.d$x_pred))
+, upr     = numeric(nrow(stan.data.d$x_pred))
 )
 
 ## Damn slow...
@@ -109,8 +109,8 @@ if (((i / 1000) %% 1) == 0) {
 
 }
 
-names(stan.fit.d.zero_est)   <- paste(names(stan.fit.d.zero_est), "theta", sep = "_")
-names(stan.fit.d.lambda_est) <- paste(names(stan.fit.d.lambda_est), "lambda", sep = "_")
+names(stan.fit.d.zero_est)     <- paste(names(stan.fit.d.zero_est), "theta", sep = "_")
+# names(stan.fit.d.lambda_est) <- paste(names(stan.fit.d.lambda_est), "lambda", sep = "_")
 
 #####  
 ## Regardless of the option, take the predictions and export to the map
@@ -118,7 +118,7 @@ names(stan.fit.d.lambda_est) <- paste(names(stan.fit.d.lambda_est), "lambda", se
 
 ### Want to export these estimates onto a map:
 reg_points.export  <- cbind(reg_points, stan.fit.d.zero_est)
-reg_points.export  <- cbind(reg_points.export, stan.fit.d.lambda_est)
+# reg_points.export  <- cbind(reg_points.export, stan.fit.d.lambda_est)
 
 raster_out <- rasterFromXYZ(reg_points.export[, c('lat', 'lon', 'est_theta')])
 writeRaster(raster_out, export.name, format = "GTiff")
