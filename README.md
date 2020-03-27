@@ -6,6 +6,6 @@ The overall goals of this collaborative endeavor were to:
   2) Predict the effects of proposed development plans on these ecosystem services. Results from other aspects of this grant are available here (http://viz.naturalcapitalproject.org/pro-agua/).
 
 A report using less technical language is available (in Spanish) here ( ). 
-More complete methods and extended discussion about the data and models are available here ( ).
+More complete methods and extended discussion about the data and models are available here (https://osf.io/t58wg/).
 
 To run these models open top_level_script.R and follow the directions
