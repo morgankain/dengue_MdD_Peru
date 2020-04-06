@@ -143,7 +143,7 @@ nc <- 3
 ## downtown MdD, but for now I cant really hope to do better 
 ###### !!
 
-if (!file.exists("../stan_output/stan.fit.d.Rds")) {
+#if (!file.exists("../stan_output/stan.fit.d.Rds")) {
 
 stan.fit.d <- stan(
   file    = "../stan_models/dengue_counts_zero_inf_pois_opt2.stan"
@@ -164,13 +164,13 @@ stan.fit.d <- stan(
 # , pars    = c("theta_pred", "lambda_log_pred")
   )
 
-saveRDS(stan.fit.d, "../stan_output/stan.fit.d.Rds")
-
-} else {
-  
-stan.fit.d <- readRDS("../stan_output/stan.fit.d.Rds")
-  
-}
+#saveRDS(stan.fit.d, "../stan_output/stan.fit.d.Rds")
+#
+#} else {
+#  
+#stan.fit.d <- readRDS("../stan_output/stan.fit.d.Rds")
+#  
+#}
 
 ## Pleasant way to debug quickly
 # launch_shinystan(stan.fit.d)

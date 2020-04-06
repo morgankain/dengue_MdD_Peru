@@ -21,11 +21,17 @@ dist_mat_to_road   <- read.csv("../dengue_zero_cases_stan_data/distances/cases_t
 dist_mat_to_health <- read.csv("../dengue_zero_cases_stan_data/distances/cases_to_health.csv")
 
 ## fine or coarse depending on the predictions being generated
-reg_points_name    <- paste("../dengue_zero_cases_stan_data/new/", pred_scale, "_fut_sost.csv", sep = "")
+reg_points_name    <- paste("../dengue_zero_cases_stan_data/final/"
+  , paste(pred_area, pred_scale, pred_time, pred_scenario, sep = "_")
+  , ".csv", sep = "")
 reg_points         <- read.csv(reg_points_name)
 
-reg_points_name    <- paste("../dengue_zero_cases_stan_data/distances/new/", pred_scale, "_to_health.csv", sep = "")
+reg_points_name    <- paste("../dengue_zero_cases_stan_data/final/"
+  , pred_area
+  , "_to_health.csv", sep = "")
 reg_points_dist_h  <- read.csv(reg_points_name)
 
-reg_points_name    <- paste("../dengue_zero_cases_stan_data/distances/new/", pred_scale, "_to_roads.csv", sep = "")
+reg_points_name    <- paste("../dengue_zero_cases_stan_data/final/"
+  , pred_area
+  , "_to_roads.csv", sep = "")
 reg_points_dist_r  <- read.csv(reg_points_name)

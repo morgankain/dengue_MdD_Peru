@@ -56,7 +56,7 @@ nb <- 1000
 nc <- 3
 
 ## Set up so that the output gets stored and the stan model doesn't need to be rerun every time
-if (!file.exists("../stan_output/stan.fit.m.Rds")) {
+#if (!file.exists("../stan_output/stan.fit.m.Rds")) {
 
 stan.fit.m <- stan(
   file    = "../stan_models/mosquito_abund_model_only_lambda_error_for_dengue_nb_opt2.stan"
@@ -70,13 +70,13 @@ stan.fit.m <- stan(
     adapt_delta = 0.9
   ))
 
-saveRDS(stan.fit.m, "../stan_output/stan.fit.m.Rds")
-
-} else {
-  
-stan.fit.m <- readRDS("../stan_output/stan.fit.m.Rds")
-  
-}
+#saveRDS(stan.fit.m, "../stan_output/stan.fit.m.Rds")
+#
+#} else {
+#  
+#stan.fit.m <- readRDS("../stan_output/stan.fit.m.Rds")
+#  
+#}
 
 ## Pleasant way to debug quickly
 # launch_shinystan(stan.fit.m)

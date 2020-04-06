@@ -12,30 +12,44 @@
  ## 3) 3 layer raster with 95% CI overlap that also shows predicted population sizes
  ## 4) Table with risk, including # of people
 
-names(stan.fit.d.zero_est.sost) <- paste(
-  names(stan.fit.d.zero_est.sost), "sost", sep = "_"
-)
+reg_points.export.peor <- readRDS("../map_export/dengue_TAH_coarse_fut_peor.Rds")
 
-names(stan.fit.d.zero_est.sost) <- names(stan.fit.d.zero_est)
+## Only needed for PM because of odd out-of boundary sampling
+# reg_points.export.pres <- reg_points.export.pres %>% filter(pop < 30)
+raster_out             <- rasterFromXYZ(reg_points.export.peor[, c('lat', 'lon', 'est_theta')])
 
-names(stan.fit.d.zero_est.sost)[c(4, 5)] <- names(stan.fit.d.zero_est.sost)[c(5, 4)]
+export.name            <- "../map_export/dengue_TAH_coarse_peor_fut"
 
+writeRaster(raster_out
+  , paste(export.name, "_theta", ".tif", sep = "")
+  , format = "GTiff")
+
+## Just pull out theta est
+reg_points.export.peor.est <- reg_points.export.peor %>% dplyr::select(lwr_theta, lwr_nrw_theta, est_theta, upr_theta, upr_nrw_theta)
+
+## upr_theta and upr_nrw_theta named backwards
+names(reg_points.export.rea.est)[c(4, 5)] <- names(reg_points.export.rea.est)[c(5, 4)]
+
+## add name of the scenario
+names(reg_points.export.pres.est) <- paste(names(reg_points.export.pres.est), "pres", sep = "_")
+
+## Combine
 reg_points.export.all.wide <- cbind(
   id  = reg_points.export.pres$id
 , lat = reg_points.export.pres$lat
 , lon = reg_points.export.pres$lon
-, stan.fit.d.zero_est.pres
-, stan.fit.d.zero_est.rea
-, stan.fit.d.zero_est.sost
-, stan.fit.d.zero_est.peor
-  )
+, reg_points.export.pres.est
+, reg_points.export.rea.est
+, reg_points.export.sost.est
+, reg_points.export.peor.est)
 
+saveRDS(reg_points.export.all.wide, "reg_points.export.all.wide.TAH.Rds")
 
 ### Stack of present prediction with population density
 raster.pres      <- rasterFromXYZ(reg_points.export.pres[, c('lat', 'lon', 'est_theta')])
 raster.pres.pop  <- rasterFromXYZ(reg_points.export.pres[, c('lat', 'lon', 'pop')])
 raster.brick     <- brick(raster.pres, raster.pres.pop)
-export.name      <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_pres_with_pop.tif", sep = "")
+export.name      <- paste("../map_export/", "dengue_", pred_scale, "_pres_with_pop.tif", sep = "")
 bf               <- writeRaster(raster.brick, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
 
 ### Stack of all future predictions
@@ -44,16 +58,14 @@ raster.sost  <- rasterFromXYZ(reg_points.export.sost[, c('lat', 'lon', 'est_thet
 raster.peor  <- rasterFromXYZ(reg_points.export.peor[, c('lat', 'lon', 'est_theta')])
 raster.brick <- brick(raster.rea, raster.peor, raster.sost)
 
-export.name <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_fut_all.tif", sep = "")
+export.name <- paste("../map_export/", "dengue_", "TAH_", pred_scale, "_fut_all.tif", sep = "")
 bf          <- writeRaster(raster.brick, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
-
-# saveRDS(reg_points.export.all.wide, "reg_points.export.all.wide.Rds")
 
 ### Check which pixels are greater or less than the present for each future scenario 
 reg_points.export.all.wide.pres <- reg_points.export.all.wide %>%
   mutate(
-    fut_lower  = ifelse(lwr_theta_sost < upr_theta_pres, -1, 0)
-  , fut_higher = ifelse(upr_theta_sost > lwr_theta_pres, 1, 0)
+    fut_lower  = ifelse(upr_theta_rea < lwr_theta_pres, -1, 0)
+  , fut_higher = ifelse(lwr_theta_rea > upr_theta_pres, 1, 0)
     ) %>% 
   mutate(
     fut_diff   = ifelse(fut_lower == -1, -1, 0)
@@ -65,18 +77,19 @@ reg_points.export.all.wide.pres <- reg_points.export.all.wide %>%
   ) %>% 
   left_join(., reg_points.export.pres[, c(2, 3, 11)])
 
-names(reg_points.export.all.wide.sost)[7] <- c("pop_sost")
+names(reg_points.export.all.wide.pres)[7] <- c("pop_rea")
 
-reg_points.export.all.wide.sost <- reg_points.export.all.wide.sost %>% mutate(pop_sost = ifelse(fut_diff != 0, pop_sost, 0))
+## Bit of a hacky way to just keep pop in the areas where fut_diff is != 0 (for calculations lower down and visualizations)
+reg_points.export.all.wide.rea <- reg_points.export.all.wide.rea %>% mutate(pop_rea = ifelse(fut_diff != 0, pop_rea, 0))
 
-raster.sost.diff       <- rasterFromXYZ(reg_points.export.all.wide.sost[, c('lat', 'lon', 'fut_diff')])
-raster.sost.diff.pop   <- rasterFromXYZ(reg_points.export.all.wide.sost[, c('lat', 'lon', 'pop_sost')])
-raster.brick.diff      <- brick(raster.sost.diff, raster.sost.diff.pop)
-export.name            <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_fut_sost_diff.tif", sep = "")
-bf                     <- writeRaster(raster.brick.diff, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
+raster.rea.diff       <- rasterFromXYZ(reg_points.export.all.wide.rea[, c('lat', 'lon', 'fut_diff')])
+raster.rea.diff.pop   <- rasterFromXYZ(reg_points.export.all.wide.rea[, c('lat', 'lon', 'pop_rea')])
+raster.brick.diff     <- brick(raster.rea.diff, raster.rea.diff.pop)
+export.name           <- paste("../map_export/", "dengue_", "TAH_", pred_scale, "_fut_rea_diff.tif", sep = "")
+bf                    <- writeRaster(raster.brick.diff, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
 
-### All together
-export.name <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_fut_all_diff.tif", sep = "")
+## All together
+export.name <- paste("../map_export/", "dengue_", "TAH_", pred_scale, "_fut_all_diff.tif", sep = "")
 
 raster.rea.diff   <- rasterFromXYZ(reg_points.export.all.wide.rea[, c('lat', 'lon', 'fut_diff')])
 raster.sost.diff  <- rasterFromXYZ(reg_points.export.all.wide.sost[, c('lat', 'lon', 'fut_diff')])
@@ -85,24 +98,11 @@ raster.brick.diff <- brick(raster.rea.diff, raster.peor.diff, raster.sost.diff)
 
 bf <- writeRaster(raster.brick.diff, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
 
-### Also, want the actual risk in the pixels with non-overlap of 95% CI for Peor overlapped
- ### With predictions for the present
-reg_points.export.all.wide.peor.t <- reg_points.export.all.wide.peor.t %>%
-  mutate(est_theta_peor = ifelse(fut_higher == 1, est_theta_peor, 0))
-
-raster.pres.pcomp  <- rasterFromXYZ(reg_points.export.all.wide.peor.t[, c('lat', 'lon', 'est_theta_pres')])
-raster.peor.pcomp  <- rasterFromXYZ(reg_points.export.all.wide.peor.t[, c('lat', 'lon', 'est_theta_peor')])
-raster.brick.pcomp <- brick(raster.pres.pcomp, raster.peor.pcomp)
-export.name        <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_pres_peor_comp.tif", sep = "")
-bf                 <- writeRaster(raster.brick.pcomp, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
-
-
-
 ## Determine area where we expect dengue to be increasing, decreasing and avg weighted dengue risk
 summary_change <- data.frame(
   scenario                     = c("sost", "rea", "peor")
 , dengue_risk_area_expansion   = c(
- sum(reg_points.export.all.wide.sost$fut_higher) * (250 * 250 / 1000 / 1000)
+  sum(reg_points.export.all.wide.sost$fut_higher) * (250 * 250 / 1000 / 1000)
 , sum(reg_points.export.all.wide.rea$fut_higher)  * (250 * 250 / 1000 / 1000)
 , sum(reg_points.export.all.wide.peor$fut_higher) * (250 * 250 / 1000 / 1000)
 )
@@ -141,9 +141,29 @@ reg_points.export.all <- rbind(
 , reg_points.export.peor
 )
 
-# saveRDS(reg_points.export.all, "reg_points.export.all.Rds")
+### Also, want the actual risk in the pixels with non-overlap of 95% CI for peor overlapped with predictions for the present
+reg_points.export.all.wide.rea.t <- reg_points.export.all.wide %>%
+  mutate(
+    fut_lower  = ifelse(upr_theta_rea < lwr_theta_pres, -1, 0)
+  , fut_higher = ifelse(lwr_theta_rea > upr_theta_pres, 1, 0)
+    ) %>% 
+  mutate(
+    fut_diff   = ifelse(fut_lower == -1, -1, 0)
+  ) %>% 
+  mutate(
+    fut_diff   = ifelse(fut_higher == 1, 1, fut_diff)
+  )
 
+reg_points.export.all.wide.peor.t <- reg_points.export.all.wide.peor.t %>%
+  mutate(est_theta_peor = ifelse(fut_higher == 1, est_theta_peor, 0))
 
+raster.pres.pcomp  <- rasterFromXYZ(reg_points.export.all.wide.peor.t[, c('lat', 'lon', 'est_theta_pres')])
+raster.peor.pcomp  <- rasterFromXYZ(reg_points.export.all.wide.peor.t[, c('lat', 'lon', 'est_theta_peor')])
+raster.brick.pcomp <- brick(raster.pres.pcomp, raster.peor.pcomp)
+export.name        <- paste("../map_export/", "dengue_", "TAH_", pred_scale, "_pres_peor_comp.tif", sep = "")
+bf                 <- writeRaster(raster.brick.pcomp, filename = export.name, options = "INTERLEAVE=BAND", overwrite = TRUE)
+
+## Some scr
 check_vals <- data.frame(
   covariate = c(
     rep("land1", nrow(reg_points.pres) * 2)
@@ -171,7 +191,3 @@ check_vals <- data.frame(
 check_vals %>% 
   group_by(model, covariate) %>%
   summarize(mean(value))
-
-
-
-

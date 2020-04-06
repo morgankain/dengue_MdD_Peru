@@ -41,10 +41,12 @@
 
 ## Eeek, not dynamic at all... Hope to move to opt 1 anyway...
  ## To do it this way to get CI on the predictions need all the samples
-export.name <- paste("../map_export/", pred_time, "/", "dengue_", pred_scale, "_fut_sost2.tif", sep = "")
+export.name <- paste("../map_export/", "dengue_"
+  , paste(pred_area, pred_scale, pred_time, pred_scenario, sep = "_")
+  , sep = "")
 
 ## If export to the raster has already happened don't do this slow step...
-if (!file.exists(export.name)) {
+#if (!file.exists(paste(export.name, ".Rds", sep = ""))) {
 
 stan.pred_den.samps  <- data.frame(
   alpha_theta     = stan.fit.d@sim$samples[[1]]$alpha_theta
@@ -62,7 +64,7 @@ stan.pred_den.samps  <- data.frame(
 )
 
 ## Will want to convert this to apply, but this is easy...
-stan.fit.d.zero_est <- data.frame(
+stan.fit.d.theta_est <- data.frame(
   lwr     = numeric(nrow(stan.data.d$x_pred))
 , lwr_nrw = numeric(nrow(stan.data.d$x_pred))
 , est     = numeric(nrow(stan.data.d$x_pred))
@@ -78,9 +80,18 @@ stan.fit.d.lambda_est <- data.frame(
 , upr     = numeric(nrow(stan.data.d$x_pred))
 )
 
+stan.fit.d.zero_est <- data.frame(
+  lwr     = numeric(nrow(stan.data.d$x_pred))
+, lwr_nrw = numeric(nrow(stan.data.d$x_pred))
+, est     = numeric(nrow(stan.data.d$x_pred))
+, upr     = numeric(nrow(stan.data.d$x_pred))
+, upr_nrw = numeric(nrow(stan.data.d$x_pred))
+)
+
 ## Damn slow...
 for (i in 1:nrow(stan.data.d$x_pred)) {
   
+## probability of drawing from a count distribution
  theta_pred  <- 1 - 
   linkfun$linkinv(
   stan.pred_den.samps$alpha_theta + 
@@ -88,20 +99,33 @@ for (i in 1:nrow(stan.data.d$x_pred)) {
   stan.data.d$x_pred[i, 2] * stan.pred_den.samps$beta_theta2 +
   stan.data.d$x_pred[i, 3] * stan.pred_den.samps$beta_theta3 +
   stan.data.d$z_theta_pred[i, 1] * stan.pred_den.samps$beta_theta_mos
-  ) %>% quantile(c(0.05, 0.25, 0.50, 0.75, 0.95))
+  ) 
  
-# lambda_pred <- 
-#  exp((stan.pred_den.samps$alpha_lambda + 
-#  stan.data.d$x_pred[i, 1] * stan.pred_den.samps$beta_lambda1 +
-#  stan.data.d$x_pred[i, 2] * stan.pred_den.samps$beta_lambda2 +
-#  stan.data.d$x_pred[i, 3] * stan.pred_den.samps$beta_lambda3 +
-#  stan.data.d$z_theta_pred[i, 1] * stan.pred_den.samps$beta_lambda_mos +
-#  stan.data.d$x_obs_pred[i, 1] * stan.pred_den.samps$beta_obs1 + 
-#  stan.data.d$x_obs_pred[i, 2] * stan.pred_den.samps$beta_obs2 + 
-#  stan.data.d$offset_pred[i])) %>% quantile(c(0.05, 0.25, 0.50, 0.75, 0.95))
+## mean of the count distribution
+ lambda_pred <- 
+  exp((stan.pred_den.samps$alpha_lambda + 
+  stan.data.d$x_pred[i, 1] * stan.pred_den.samps$beta_lambda1 +
+  stan.data.d$x_pred[i, 2] * stan.pred_den.samps$beta_lambda2 +
+  stan.data.d$x_pred[i, 3] * stan.pred_den.samps$beta_lambda3 +
+  stan.data.d$z_theta_pred[i, 1] * stan.pred_den.samps$beta_lambda_mos +
+  stan.data.d$x_obs_pred[i, 1] * stan.pred_den.samps$beta_obs1 + 
+  stan.data.d$x_obs_pred[i, 2] * stan.pred_den.samps$beta_obs2 + 
+  stan.data.d$offset_pred[i])) 
+
+## Probability of getting a zero = 1 - probability of drawing from the count distribution + probability of draqing a zero | draw from a count
+prob_0_pred <- 1 - (  ## 1 - 
+  ## total probability of zero = 
+  (1 - theta_pred) +                 ## probability of a structural 0 
+  theta_pred * dpois(0, lambda_pred) ## probability of drawing a zero from the count distribution
+)
+
+theta_pred  <- theta_pred  %>% quantile(c(0.05, 0.25, 0.50, 0.75, 0.95))
+lambda_pred <- lambda_pred %>% quantile(c(0.05, 0.25, 0.50, 0.75, 0.95))
+prob_0_pred <- prob_0_pred %>% quantile(c(0.05, 0.25, 0.50, 0.75, 0.95))
  
-stan.fit.d.zero_est[i, ]   <- theta_pred
-#stan.fit.d.lambda_est[i, ] <- lambda_pred
+stan.fit.d.theta_est[i, ]  <- theta_pred
+stan.fit.d.lambda_est[i, ] <- lambda_pred
+stan.fit.d.zero_est[i, ]   <- prob_0_pred
 
 if (((i / 1000) %% 1) == 0) {
   print(i / nrow(stan.data.d$x_pred))
@@ -109,23 +133,32 @@ if (((i / 1000) %% 1) == 0) {
 
 }
 
-names(stan.fit.d.zero_est)     <- paste(names(stan.fit.d.zero_est), "theta", sep = "_")
-# names(stan.fit.d.lambda_est) <- paste(names(stan.fit.d.lambda_est), "lambda", sep = "_")
+names(stan.fit.d.theta_est)  <- paste(names(stan.fit.d.theta_est), "theta", sep = "_")
+names(stan.fit.d.lambda_est) <- paste(names(stan.fit.d.lambda_est), "lambda", sep = "_")
+names(stan.fit.d.zero_est)   <- paste(names(stan.fit.d.zero_est), "zero", sep = "_")
 
 #####  
 ## Regardless of the option, take the predictions and export to the map
 #####
 
 ### Want to export these estimates onto a map:
-reg_points.export  <- cbind(reg_points, stan.fit.d.zero_est)
-# reg_points.export  <- cbind(reg_points.export, stan.fit.d.lambda_est)
+reg_points.export  <- cbind(reg_points, stan.fit.d.theta_est)
+reg_points.export  <- cbind(reg_points.export, stan.fit.d.lambda_est)
+reg_points.export  <- cbind(reg_points.export, stan.fit.d.zero_est)
+
+saveRDS(reg_points.export, paste(export.name, ".Rds", sep = ""))
+
+reg_points.export <- reg_points.export %>% filter(pop < 30)
+# reg_points.export <- reg_points.export  %>% mutate(pred_diff = est_theta - est_zero)
 
 raster_out <- rasterFromXYZ(reg_points.export[, c('lat', 'lon', 'est_theta')])
-writeRaster(raster_out, export.name, format = "GTiff")
+writeRaster(raster_out
+  , paste(export.name, "_theta", ".tif", sep = "")
+  , format = "GTiff")
 
-} else {
-  
-raster_out <- raster(export.name)
-
-}
+#} else {
+#  
+#raster_out <- raster(paste(export.name, ".tif", sep = ""))
+#
+#}
 

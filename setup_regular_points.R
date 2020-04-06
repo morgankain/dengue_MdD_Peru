@@ -14,6 +14,15 @@ reg_points               <- transform(reg_points
   , dist_to_h = dist_to_h / 1000
   , dist_to_r = dist_to_r / 1000
 )
+
+## !! Just clean up NA from the top
+reg_points <- reg_points %>% 
+  filter(!is.na(land1), !is.na(land3), !is.na(pop), !is.na(tempmean), !is.na(tempvar), !is.na(aedes)
+    )
+
+## take logit scale on probability so cant have 0. Set all zeroes (almost none) to the non-0 mean
+reg_points[reg_points$aedes == 0, ]$aedes <- min(reg_points[reg_points$aedes != 0, ]$aedes)
+
 ## First scale for fitting in the mosquito count model (also take care of building the right object with all of
  ## the predictors for the Dengue count model up front)
 reg_points.x <- as.matrix(reg_points %>% dplyr::select(land1, land3, pop, tempmean, tempvar))

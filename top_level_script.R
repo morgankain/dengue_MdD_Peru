@@ -14,9 +14,13 @@ linkfun <- make.link("logit")
   # Duplicate data with some noise (a trial that mostly didn't work). Best to keep this false
 sim_data <- FALSE
   # Fine or coarse predictions? (pulls in different exported csv from QGIS)
-pred_scale <- "coarse"
+pred_scale    <- "coarse" # coarse
   # prediction for present or future? (only data for "present" available on github)
-pred_time <- "pres"
+pred_time     <- "fut"   # pres, fut
+  # prediction area
+pred_area     <- "PM"     # PM, TAH
+  # prediction scenario
+pred_scenario <- "rea"    # now, peor, sost, rea
 
 ## Load data, exported as .csv from raster samples made in QGIS
 source("load_data.R")
